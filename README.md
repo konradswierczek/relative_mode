@@ -1,16 +1,15 @@
 # Relative Mode
-Tuomas Eerola
 
-This package contains code for calculating “relative mode” from audio
-signal. Relative mode refers to the degree of how major or minor does
+This package contains Python code for calculating _relative mode_ from an audio
+signal. _Relative mode_ refers to the degree between how major or minor does
 the segment of music sound at a given time. It is based on a classic
 key-finding algorithm (Krumhansl-Schmuckler, 1990) and extracts the
 pitch-class information using chromagrams. The relative mode is
 calculated as the difference between the strongest major key and the
 strongest minor key. Relative mode can vary from -1.0 (clearly in minor)
-to + 1.0 (clearly in major) and gives a value between these extremes.
+to + 1.0 (clearly in major) and gives a value between these extremes for the whole excerpt. Alternatively the algorithm can provide the output for each window of analysis (segments of 3 seconds as a default).
 
-The algorithm and how it is evaluated is fully documented in a
+The algorithm and how it has been evaluated is documented in a
 manuscript titled “Major-minorness in Tonal music – Evaluation of
 Relative Mode Estimation using Expert Ratings and Audio-Based
 Key-finding Principles” by Tuomas Eerola and Michael Schutz (in review).
@@ -76,7 +75,10 @@ profile (e.g. `krumhansl`, `albrecht` (default), `aarden`, or
 alternative outputs of the measure.
 
 ``` python
-RM2, RM2_segments = relative_mode(y = y, sr = sr, profile = 'simple', distance = 'pearson', chromatype = 'CQT')
+RM2, RM2_segments = relative_mode(y = y, sr = sr, 
+    profile = 'simple', 
+    distance = 'pearson', 
+    chromatype = 'CQT')
 print(RM2)
 ```
 
@@ -86,7 +88,12 @@ print(RM2)
 ### Estimate relative mode across the excerpt
 
 ``` python
-fig, RM3 = RME_across_time(filename = filename, winlen = 3, hoplen = 3, cropfirst = 0, croplast = 0, chromatype = 'CENS', profile = 'albrecht', distance = 'cosine', plot = True)
+fig, RM3 = RME_across_time(filename = filename, 
+    winlen = 3, hoplen = 3, cropfirst = 0, croplast = 0, 
+    chromatype = 'CENS', 
+    profile = 'albrecht',
+    distance = 'cosine',
+    plot = True)
 fig
 plt.show()
 ```
