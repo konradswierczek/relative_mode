@@ -1,5 +1,7 @@
 # Relative Mode
-Tuomas Eerola
+
+
+<!--conda activate relative_mode-->
 
 This package contains Python code for calculating *relative mode* from
 an audio signal. *Relative mode* refers to the degree between how major
@@ -16,8 +18,8 @@ default).
 The algorithm and how it is evaluated is fully documented in a
 manuscript titled “Major-minorness in Tonal music – Evaluation of
 Relative Mode Estimation using Expert Ratings and Audio-Based
-Key-finding Principles” by Tuomas Eerola and Michael Schutz (Psychology
-of Music, 2025).
+Key-finding Principles” by Tuomas Eerola and Michael Schutz (*Psychology
+of Music*, in press).
 
 ### Libraries
 
@@ -98,10 +100,10 @@ plt.show()
 
 ## Alternative analyses
 
-In the article (Eerola & Schutz, 2025) we assess various aspects of the
-model (key profiles, distance measures, alternative formulations of the
-model) in Experiment 1. We also examine what could explain the
-variations in model success across recordings used in Experiment. Here
+In the article (Eerola & Schutz, 2025), we assess various parameters of
+the model (key profiles, distance measures, alternative formulations of
+the model) in Experiment 1. We also examine what could explain the
+variations in model success across recordings used in Experiment 3. Here
 we briefly report these alternative explorations.
 
 ### Experiment 1: Alternative analyses
@@ -112,13 +114,11 @@ alternative formulations of the model, one that utilises comparison with
 the parallel minor and another one relying on the relative minor.
 
 The parallel minor key of the major key received lower correlation with
-the expert ratings (*r* = 0.698 averaged across the Pearson correlation
-metric) than the actual model (*r* = 0.840). The second alternative
-relies on the relative minor key of the major key. This alternative
-received a lower correlation (*r* = 0.766 averaged across the Pearson
-correlation metric) with the expert ratings compared to the proposed
-model. For this reason, we did not pursue these two alternatives
-further.
+the expert ratings (*r* = 0.698) than the actual model (*r* = 0.840).
+The second alternative relies on the relative minor key of the major
+key. This alternative received a lower correlation (*r* = 0.766) with
+the expert ratings compared to the proposed model. For this reason, we
+did not pursue these two alternatives further.
 
 We also run alternative formulations of window length (1 to 5 seconds)
 and overlap (0 to 75% overlap) which did not provide substantially
@@ -132,18 +132,18 @@ the analysis windows (*r* = 0.785).
 To identify the consistent noise factors in the RME analysis from audio,
 we extracted dynamics, several timbral descriptors (brightness, spectral
 centroid, spectral flux, rms, roughness) and tempo descriptors for each
-excerpt using Essentia, and added these as additional predictors to the
-regression with RME model predicting the expert ratings. However, no
-single audio descriptor could contribute significantly (more than 2 % of
-the variance accounted) to the model that already had a highly
-successful predictor (RME) within it. A more extensive analysis of the
-potential additional considerations would benefit from a larger set of
-materials and from systematic alterations of the most plausible
-variations of these factors.
+excerpt using [Essentia](https://essentia.upf.edu), and added these as
+additional predictors to the regression with RME model predicting the
+expert ratings. However, no single audio descriptor could contribute
+significantly (more than 2 % of the variance accounted) to the model
+that already had a highly successful predictor (RME) within it. A more
+extensive analysis of the potential additional considerations would
+benefit from a larger set of materials and from systematic alterations
+of the most plausible variations of these factors.
 
 # References
 
-Eerola, T. & Schutz, M. (2025). Major-minorness in Tonal music –
+Eerola, T. & Schutz, M. (in press). Major-minorness in Tonal music –
 Evaluation of Relative Mode Estimation using Expert Ratings and
 Audio-Based Key-finding Principles. *Psychology of Music, X(xx)*,
 xxx-xxx.
