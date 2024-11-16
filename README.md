@@ -1,5 +1,7 @@
 # Relative Mode
 
+forked from [tuomaseerola/relative_mode](https://github.com/tuomaseerola/relative_mode)
+
 
 <!--conda activate relative_mode-->
 
@@ -34,15 +36,15 @@ import pandas as pd
 ### Load package using pip
 
 ``` python
-pip install relative_mode
+pip install git+https://github.com/konradswierczek/relative_mode.git
 ```
 
 Make function calls explicit for the subsequent analyses.
 
 ``` python
-from src.relative_mode import Tonal_Fragment
-from src.relative_mode import relative_mode
-from src.relative_mode import RME_across_time
+from relative_mode import Tonal_Fragment
+from relative_mode import relative_mode
+from relative_mode import RME_across_time
 ```
 
 ### Load a music example
