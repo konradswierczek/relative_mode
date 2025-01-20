@@ -240,7 +240,7 @@ class Tonal_Fragment(object):
 #### Other functions ####
 # This is a meta-function that runs the tonal_fragment across the windows
 
-def relative_mode(y, sr, winlen=3, hoplen=3, distance='cosine', profile='albrecht', chromatype='CENS'):
+def relative_mode(y, sr, winlen=3, hoplen=3, distance='cosine', profile='simple', chromatype='CQT'):
     """
     Run relative mode estimation across analysis windows. 
 
